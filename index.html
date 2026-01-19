@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>루가 아트머그</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <!-- HERO SECTION -->
+    <section class="section hero escore">
+        <!-- LEFT -->
+        <div class="hero-left">
+            <div class="pill">맞춤 Live2D 리깅 커미션</div>
+
+            <h2 class="title pretend">루가 작업실</h2>
+
+            <p class="subtitle">말랑하게 움직이는 버츄얼 캐릭터<br>
+            캐릭터의 매력을 살려주는 맞춤 Live2D 리깅 커미션</p>
+
+            <div class="tags" aria-label="태그">
+            <span class="tag">#말랑한 리깅</span>
+            <span class="tag">#자연스러운 움직임</span>
+            <span class="tag">#빠르고 꼼꼼한</span>
+            <span class="tag">#버츄얼 리깅</span>
+            </div>
+
+            <div class="cta">
+            </div>
+            <div class="error" id="error" hidden></div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="hero-right">
+            <div class="sliderFrame">
+            <div class="slider" id="slider" aria-label="이미지 슬라이드">
+                <div class="slide-track" id="track"></div>
+
+                <button class="navBtn navPrev" id="prev" type="button" aria-label="이전">‹</button>
+                <button class="navBtn navNext" id="next" type="button" aria-label="다음">›</button>
+
+                <div class="dots" id="dots" aria-label="슬라이드 선택"></div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICE SECTION -->
+    <section class="section notice escore" style="margin-top:18px;">
+
+    <div class="notice-topGrid escore">
+        <!-- 작업 현황 -->
+        <div class="noticeCard">
+        <div class="noticeHead">
+            <div class="noticeTitle">작업 현황</div>
+            <div class="noticeSub">♥ 마감 / ● 가능</div>
+        </div>
+        <div class="statusGrid" id="statusGrid"></div>
+        </div>
+
+        <!-- 환불정책 -->
+        <div class="noticeCard noticeRefundCard">
+        <div class="noticeHead">
+            <div class="noticeTitle">환불정책</div>
+        </div>
+        <div class="refund" id="refundTable"></div>
+        </div>
+    </div>
+
+    <!-- 필독사항 -->
+    <div class="noticePanel">
+        <h3 class="h3 escore">필독사항</h3>
+        <ul class="list" id="noticeItems"></ul>
+    </div>
+
+    <div class="error" id="noticeError" hidden></div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="section process escore" style="margin-top:18px;">
+    <div class="process-head">
+        <h2 class="title pretend">작업 진행 과정</h2>
+    </div>
+
+    <div class="process-flow" aria-label="작업 진행 단계">
+        <div class="pstep">
+        <div class="pstep-top">
+            <div class="pnum">1</div>
+            <div class="picon" aria-hidden="true">
+            <!-- mail -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-heart-fill" viewBox="0 0 16 16">
+            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15m0-9.007c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+            </svg>
+            </div>
+        </div>
+        <div class="plabel">문의 및 견적 안내</div>
+        </div>
+
+        <div class="parrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </div>
+
+        <div class="pstep">
+        <div class="pstep-top">
+            <div class="pnum">2</div>
+            <div class="picon" aria-hidden="true">
+            <!-- pay -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-check" viewBox="0 0 16 16">
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514"/>
+            <path d="M12.096 6.223A5 5 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.5 4.5 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.5 4.5 0 0 1-.813-.927Q8.378 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.6 4.6 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10q.393 0 .774-.024a4.5 4.5 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777M3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4"/>
+            </svg>
+            </div>
+        </div>
+        <div class="plabel">주문 및 입금</div>
+        </div>
+
+        <div class="parrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </div>
+
+        <div class="pstep">
+        <div class="pstep-top">
+            <div class="pnum">3</div>
+            <div class="picon" aria-hidden="true">
+            <!-- start -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+            <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086z"/>
+            </svg>
+            </div>
+        </div>
+        <div class="plabel">작업 시작</div>
+        </div>
+
+        <div class="parrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </div>
+
+        <div class="pstep">
+        <div class="pstep-top">
+            <div class="pnum">4</div>
+            <div class="picon" aria-hidden="true">
+            <!-- feedback -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-heart-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+            <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zm4 5.982c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018"/>
+            </svg>
+            </div>
+        </div>
+        <div class="plabel">완성 후 피드백</div>
+        </div>
+
+        <div class="parrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </div>
+
+        <div class="pstep">
+        <div class="pstep-top">
+            <div class="pnum">5</div>
+            <div class="picon" aria-hidden="true">
+            <!-- delivery -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box2-heart-fill" viewBox="0 0 16 16">
+            <path d="M3.75 0a1 1 0 0 0-.8.4L.1 4.2a.5.5 0 0 0-.1.3V15a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4.5a.5.5 0 0 0-.1-.3L13.05.4a1 1 0 0 0-.8-.4zM8.5 4h6l.5.667V5H1v-.333L1.5 4h6V1h1zM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+            </svg>
+            </div>
+        </div>
+        <div class="plabel">완성본 전달</div>
+        </div>
+    </div>
+
+    <div class="process-foot">
+        <p class="process-note">
+        Vtube Studio 세팅 도움 필요 시 디스코드 화면공유를 통해 도와드립니다.
+        </p>
+        <p class="process-note">
+        리깅 오류가 발생할 경우, 무상으로 수정해 드립니다. (전달일 기준 2주 이내)
+        </p>
+    </div>
+    </section>
+
+  </main>
+</body>
+</html>
