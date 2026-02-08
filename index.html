@@ -194,6 +194,129 @@
     </div>
     </section>
 
+    <!-- PRICE SECTION -->
+    <section class="section pricing escore" style="margin-top:18px;">
+        <h2 class="title pretend" style="font-size:24px; margin:6px 0 12px;">가격 안내</h2>
+        <div id="pricingRoot"></div>
+        <div class="error" id="pricingError" hidden></div>
+    </section>
+
+    <!-- DETAILS SECTION -->
+     <section class="section details escore" id="riggingDetails" style="margin-top:18px;">
+        <h2 class="title">리깅 세부사항</h2>
+        <p class="error" id="riggingDetailsError"></p>
+        <div id="riggingDetailsRoot"></div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="section portfolio escore" style="margin-top:18px;">
+        <h2 class="title pretend" style="font-size:24px; margin:6px 0 12px;">포트폴리오</h2>
+        <div id="portfolioRoot"></div>
+        <div class="error" id="portfolioError" hidden></div>
+    </section>
+
+    <!-- COLLEB SECTION -->
+    <section class="section collab escore" style="margin-top:18px;">
+        <h2 class="title pretend">협업 작가</h2>
+        <div id="collabRoot"></div>
+        <div class="error" id="collabError" hidden></div>
+    </section>
+
+    <!-- APPLY FORM SECTION -->
+    <section class="section pricing escore" style="margin-top:18px;" id="apply">
+        <h2 class="title pretend">신청 양식</h2>
+
+        <div class="applyCard">
+            <div class="applyTop">
+                <p class="applyGuide"></p>
+            </div>
+
+            <!-- 강조: PSD -->
+            <div class="applyAlert" role="note" aria-label="PSD 첨부 안내">
+                <strong>⚠️ 원본 PSD 파일을 반드시 함께 첨부해 주세요!</strong>
+            </div>
+
+            <form id="applyForm" class="applyForm" autocomplete="off">
+            <div class="applyGrid">
+                <label class="field">
+                <span class="fieldLabel">닉네임</span>
+                <input class="fieldInput" type="text" name="nickname" placeholder="닉네임을 입력해주세요. (예: 루가)" />
+                </label>
+
+                <label class="field">
+                <span class="fieldLabel">그림 작가님 주소</span>
+                <input class="fieldInput" type="url" name="artistUrl" placeholder="아트머그 주소를 입력해주세요. (예: https://...)" />
+                </label>
+
+                <label class="field">
+                <span class="fieldLabel">방송 주소</span>
+                <input class="fieldInput" type="url" name="streamUrl" placeholder="방송 주소를 입력해주세요. (예: https://...)" />
+                </label>
+
+                <label class="field">
+                <span class="fieldLabel">수령 희망 날짜</span>
+                <input class="fieldInput" type="text" name="dueDate" placeholder="수령을 희망하는 날짜를 작성해주세요. (예: 3/15, 3-15등)" />
+                </label>
+            </div>
+
+            <div class="applyCols">
+                <fieldset class="fieldset">
+                <legend class="legend">작업 과정 비공개</legend>
+                <label class="radio">
+                    <input type="radio" name="processPrivate" value="YES (+50,000원)" />
+                    <span>YES (+50,000원)</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="processPrivate" value="NO" checked />
+                    <span>NO</span>
+                </label>
+                </fieldset>
+
+                <fieldset class="fieldset">
+                <legend class="legend">포트폴리오 비공개</legend>
+                <label class="radio">
+                    <input type="radio" name="portfolioPrivate" value="YES (최대 6개월 / +100,000원)" />
+                    <span>YES (최대 6개월 / +100,000원)</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="portfolioPrivate" value="NO" checked />
+                    <span>NO</span>
+                </label>
+                </fieldset>
+            </div>
+
+            <fieldset class="fieldset">
+                <legend class="legend">신청 타입</legend>
+                <div class="chips">
+                <label class="chip"><input type="checkbox" name="type" value="LD 전신" /><span>LD 전신</span></label>
+                <label class="chip"><input type="checkbox" name="type" value="LD 반신" /><span>LD 반신</span></label>
+                <label class="chip"><input type="checkbox" name="type" value="SD 전신" /><span>SD 전신</span></label>
+                <label class="chip"><input type="checkbox" name="type" value="협업 리깅" /><span>협업 리깅</span></label>
+                <label class="chip"><input type="checkbox" name="type" value="애니메이션" /><span>애니메이션</span></label>
+                <label class="chip"><input type="checkbox" name="type" value="에셋" /><span>에셋</span></label>
+                </div>
+            </fieldset>
+
+            <label class="field">
+                <span class="fieldLabel">추가 옵션 / 표정들</span>
+                <textarea class="fieldTextarea" name="options" rows="4" placeholder="예: 표정 3종(기쁨/놀람/울상), 손모양 2종..."></textarea>
+            </label>
+
+            <label class="field">
+                <span class="fieldLabel">참고자료</span>
+                <textarea class="fieldTextarea" name="refs" rows="4" placeholder="예:캐릭터 설정 / 참고 영상 링크 / 원하는 무드..."></textarea>
+            </label>
+
+            <div class="applyActions">
+                <button type="button" class="btn ghost" id="applyResetBtn">초기화</button>
+                <button type="button" class="btn primary" id="applyCopyBtn">양식 복사</button>
+            </div>
+            </form>
+        </div>
+
+        <div class="error" id="applyError" hidden></div>
+    </section>
+
   </main>
 </body>
 </html>
