@@ -709,7 +709,6 @@ body {
     padding: 14px;
     display: grid;
     gap: 10px;
-    min-height: 160px;
     position: relative;
     overflow: hidden;
 }
@@ -1396,7 +1395,7 @@ body {
 .section.collab .collabThumb{
   width: 120px;
   flex: 0 0 120px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3 !important;
   border-radius: 16px;
   overflow:hidden;
   background-size: 100%;
@@ -1695,4 +1694,8 @@ body {
   font-family: 'Pretendard';
   font-weight: 400;
   color: rgba(25,21,26,.45);
+}
+
+.section.collab .pricingCard.collabCard{
+  align-items: flex-start; /* 또는 center */
 }
