@@ -1161,3 +1161,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
     refreshPreview();
   })();
+
+/* Artmug iframe auto-height bridge */
+(function () {
+  'use strict';
+
+  var lastHeight = 0;
+  var timer = null;
+
+  function getHeight() {
+    var body = document.body;
+    var html = document.documentElement;
+
+    return Math.max(
+      body ? body.scrollHeight : 0,
+      body ? body.offsetHeight : 0,
+      html ? html.scrollHeight : 0,
+      html ? html.offsetHeight : 0,
+      html ? html.clientHeight : 0,
+      760
+    );
+  }
+
+  function sendHeight(force) {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      var height = Math.ceil(getHeight());
+
+      if (!force && Math.abs(height - lastHeight) < 3) return;
+      lastHeight = height;
+
+      try {
+        window.parent.postMessage({
+          source: 'syura-css',
+          type: 'SYURA_IFRAME_HEIGHT',
+          height: height
+        }, '*');
+      } catch (e) {}
+    }, 40);
+  }
+
+  function ready() {
+    try {
+      window.parent.postMessage({
+        source: 'syura-css',
+        type: 'SYURA_IFRAME_READY'
+      }, '*');
+    } catch (e) {}
+
+    sendHeight(true);
+    setTimeout(function () { sendHeight(true); }, 250);
+    setTimeout(function () { sendHeight(true); }, 800);
+    setTimeout(function () { sendHeight(true); }, 1800);
+  }
+
+  if ('ResizeObserver' in window) {
+    var ro = new ResizeObserver(function () {
+      sendHeight(false);
+    });
+
+    if (document.documentElement) ro.observe(document.documentElement);
+    if (document.body) ro.observe(document.body);
+  } else {
+    setInterval(function () {
+      sendHeight(false);
+    }, 700);
+  }
+
+  window.addEventListener('load', ready);
+  window.addEventListener('resize', function () { sendHeight(true); });
+  document.addEventListener('click', function () {
+    setTimeout(function () { sendHeight(true); }, 120);
+  }, true);
+  document.addEventListener('change', function () { sendHeight(true); }, true);
+  document.addEventListener('animationend', function () { sendHeight(true); }, true);
+  document.addEventListener('transitionend', function () { sendHeight(true); }, true);
+
+  document.querySelectorAll('img').forEach(function (img) {
+    if (!img.complete) {
+      img.addEventListener('load', function () { sendHeight(true); }, { once: true });
+    }
+  });
+
+  if (document.readyState !== 'loading') {
+    ready();
+  } else {
+    document.addEventListener('DOMContentLoaded', ready);
+  }
+})();
